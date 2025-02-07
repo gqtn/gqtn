@@ -7,6 +7,7 @@ Under building...
 ### Indice
 
 - [General](#General)
+- [chmod](#chmod)
 - [iperf](#iperf)
 - [multicast](#Multicast)
 - [cURL](#cURL)
@@ -56,6 +57,32 @@ $ # other options are: 96, 120, 141, 144, 168, 192
 
 - For some Flatpak apps that requires web:
 > `$ sudo pacman -S xdg-desktop-portal-gtk`
+
+---
+### chmod
+
+Here are some examples of how to use the chmod command in numeric mode:
+
+- Give the file’s owner read and write permissions and only read permissions to group members and all other users:
+    ```
+chmod 644 dirname
+    ```
+
+- Give the file’s owner read, write and execute permissions, read and execute permissions to group members and no permissions to all other users:
+    ```
+
+chmod 750 dirname
+    ```
+
+- Give read, write, and execute permissions, and a sticky bit to a given directory:
+    ```
+chmod 1777 dirname
+    ```
+
+- Recursively set read, write, and execute permissions to the file owner and no permissions for all other users on a given directory:
+    ```
+chmod -R 700 dirname
+    ```
 
 ---
 ### Iperf
