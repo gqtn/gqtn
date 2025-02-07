@@ -5,12 +5,54 @@ Under building...
 ---
 ### Indice
 
-1. [cURL](#cURL)
-2. [iwlwifi](#iwlwifi)
+- [iperf](#iperf)
+- [multicast](#Multicast)
+- [cURL](#cURL)
+- [iwlwifi](#iwlwifi)
+---
+### Iperf
 
+Example:
+```
+iperf -B 10.50.3.170 -c 234.50.98.102 -u -T 32 -t 5 -b 100M -p 8000
+```
+
+!! Need to be improved...
 
 ---
+### Multicast
+(in portuguese)
 
+_Diretório: `/etc/sysctl.d/`_
+
+> Habilitar o roteamento multicast para IPv4.
+Isso permite que o sistema opere como um roteador multicast, encaminhando pacotes multicast entre interfaces.
+```
+net.ipv4.conf.all.mc_forwarding = 1
+```
+
+> Habilitar o roteamento multicast para IPv6.
+Assim como para IPv4, habilita o encaminhamento de pacotes multicast entre interfaces no IPv6.
+```
+net.ipv6.conf.all.mc_forwarding = 1
+```
+
+> Definir o tamanho máximo do buffer de recepção para soquetes.
+Um valor maior permite que o kernel lide melhor com surtos de tráfego multicast, reduzindo a perda de pacotes.
+```
+net.core.rmem_max = 26214400
+```
+
+> Definir o tamanho máximo do buffer de envio para soquetes.
+Assim como o buffer de recepção, um buffer de envio maior pode ajudar a acomodar tráfego intenso, melhorando a performance de transmissão.
+```
+net.core.wmem_max = 26214400
+```
+
+Estas configurações são aplicadas imediatamente após o carregamento deste arquivo pelo sistema no boot.
+Para aplicar manualmente as alterações sem reiniciar, use o comando: `sudo sysctl --system`
+
+---
 ### cURL
 - Login usign curl on FTP or SFTP:
 ```
@@ -62,35 +104,37 @@ curl  -k "sftp://83.46.38.23:22/CurlPutTest/test " --user "testuser:testpassword
 ```
 
 ---
-
 ### iwlwifi
 - Check the Wi-Fi card status:
-   ```
-   sudo iwconfig wlp1s0 power off/on
-   ```
+```
+sudo iwconfig wlp1s0 power off/on
+```
 - Scan to check the ESSID:
-   ```
-   sudo iwlist wlp1s0 scan |grep ESSID
-   ```
+```
+sudo iwlist wlp1s0 scan |grep ESSID
+```
 - Generate the correct data for it:
-   ```
-   sudo wpa_passphrase "2.4G" "1234567890" > 2g.conf
-   ```
+```
+sudo wpa_passphrase "2.4G" "1234567890" > 2g.conf
+```
 - Try to connect:
-   ```
-   sudo wpa_supplicant -i wlp1s0 -c 2G.conf -D wext,nl80211
-   ```
+```
+sudo wpa_supplicant -i wlp1s0 -c 2G.conf -D wext,nl80211
+```
 - Maybe it's necessary to shutdown the networking service:
-   ```
-   sudo systemctl shutdown networking.service
-   ```
+```
+sudo systemctl shutdown networking.service
+```
 - If it worked, you need to add a background param:
-   ```
-   sudo wpa_supplicant -B -i wlp1s0 -c 2G.conf -D wext,nl80211
-   ```
+```
+sudo wpa_supplicant -B -i wlp1s0 -c 2G.conf -D wext,nl80211
+```
 - Run the DHCP
-   ```
-   sudo dhclient wlp1s0
-   ````
-
+```
+sudo dhclient wlp1s0
+```
+- For Dell (weird issue):
+```
+sudo lsmod | grep -o -e ^iwlmvm -e ^iwldvm -e ^iwlwifi | xargs sudo rmmod && sleep 3 && sudo modprobe iwlwifi swcrypto=0
+```
 ---
