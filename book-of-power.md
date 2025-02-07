@@ -6,6 +6,7 @@ Under building...
 ### Indice
 
 1. [cURL](#cURL)
+2. [iwlwifi](#iwlwifi)
 
 
 ---
@@ -62,4 +63,34 @@ curl  -k "sftp://83.46.38.23:22/CurlPutTest/test " --user "testuser:testpassword
 
 ---
 
+### iwlwifi
+- Check the Wi-Fi card status:
+   ```
+   sudo iwconfig wlp1s0 power off/on
+   ```
+- Scan to check the ESSID:
+   ```
+   sudo iwlist wlp1s0 scan |grep ESSID
+   ```
+- Generate the correct data for it:
+   ```
+   sudo wpa_passphrase "2.4G" "1234567890" > 2g.conf
+   ```
+- Try to connect:
+   ```
+   sudo wpa_supplicant -i wlp1s0 -c 2G.conf -D wext,nl80211
+   ```
+- Maybe it's necessary to shutdown the networking service:
+   ```
+   sudo systemctl shutdown networking.service
+   ```
+- If it worked, you need to add a background param:
+   ```
+   sudo wpa_supplicant -B -i wlp1s0 -c 2G.conf -D wext,nl80211
+   ```
+- Run the DHCP
+   ```
+   sudo dhclient wlp1s0
+   ````
 
+---
