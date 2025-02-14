@@ -17,6 +17,12 @@ Under building...
 ### General
 General information for new installations and whatever:
 
+- For `dust` notification with `i3lock`:
+If you do not want to get notification with screen lock, just enable this option in the `picom.conf`:
+```
+unredir-if-possible = true
+```
+
 - If you need _Nerd Giphs_, you can download it [here](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/NerdFontsSymbolsOnly.zip).
 - `QT` Theme with defaul `GTK` (basic):
 ```
