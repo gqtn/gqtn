@@ -1,0 +1,6 @@
+[Desktop Entry]
+Terminal=false
+Type=Application
+Name=Skype
+Exec=/opt/brave-bin/brave --app="https://web.skype.com"
+Icon=~/.local/share/applications/icons/skype.png

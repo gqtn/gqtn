@@ -1,0 +1,6 @@
+[Desktop Entry]
+Terminal=false
+Type=Application
+Name=Teams
+Exec=/opt/brave-bin/brave --app="https://teams.microsoft.com/v2/"
+Icon=~/.local/share/applications/icons/teams.png

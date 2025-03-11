@@ -1,0 +1,6 @@
+[Desktop Entry]
+Terminal=false
+Type=Application
+Name=Reddit
+Exec=/opt/brave-bin/brave --app="https://reddit.com"
+Icon=~/.local/share/applications/icons/reddit.png

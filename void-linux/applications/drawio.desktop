@@ -1,0 +1,6 @@
+[Desktop Entry]
+Terminal=false
+Type=Application
+Name=Drawio
+Exec=/opt/drawio/drawio-x86_64-26.0.9.AppImage
+Icon=~/.local/share/applications/icons/drawio.png

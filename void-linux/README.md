@@ -1,6 +1,6 @@
-### 👾 Welcome to my... 
+### 👾 Welcome to my... EndeavourOS??👾
 
-EndeavourOS??👾No! :) 
+No! :) 
 I'm configuring this new repository, using my old installation as base.
 
 Feel free to explore my update archives, and if necessary, open a issue with your questions or suggestions.
