@@ -1,0 +1,6 @@
+[Desktop Entry]
+Terminal=false
+Type=Application
+Name=Twitter (X)
+Exec=/home/gabriel/Binapps/zen/zen-bin
+Icon=~/.local/share/applications/icons/x.png

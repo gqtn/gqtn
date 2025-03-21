@@ -1,0 +1,6 @@
+[Desktop Entry]
+Terminal=false
+Type=Application
+Name=Twitter (X)
+Exec=/opt/brave-bin/brave --app="https://x.com"
+Icon=~/.local/share/applications/icons/x.png
