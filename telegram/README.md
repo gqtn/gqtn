@@ -1,4 +1,4 @@
-!(Banner)[https://giphy.com/embed/ya4eevXU490Iw]
+!(Banner)[https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOW1oeHE3cWE0anJxNmVrZDJnZGVmZDR2a2xyMW1sMmg3MW94M3RtYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ya4eevXU490Iw/giphy.gif)
 
 ## Great Groups in Telegram
 
