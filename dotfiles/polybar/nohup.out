@@ -1,0 +1,98 @@
+polybar|notice:  Parsing config file: /home/quintana/.config/polybar/config.ini
+polybar|notice:  Listening for IPC messages (PID: 170066)
+polybar|notice:  Loading module 'xworkspaces' of type 'internal/xworkspaces'
+polybar|notice:  Loading module 'cava' of type 'custom/script'
+polybar|notice:  Loading module 'pulseaudio' of type 'internal/pulseaudio'
+polybar|notice:  pulseaudio: using default sink alsa_output.pci-0000_07_00.6.HiFi__Headphones__sink
+polybar|notice:  Loading module 'battery' of type 'internal/battery'
+polybar|notice:  Loading module 'date' of type 'internal/date'
+polybar|notice:  Loading module 'memory' of type 'internal/memory'
+polybar|notice:  Loading module 'cpu' of type 'internal/cpu'
+polybar|notice:  Loading module 'eth' of type 'internal/network'
+polybar|notice:  module/eth: Discovered wired interface enp5s0
+polybar|notice:  Loading module 'wlan' of type 'internal/network'
+polybar|notice:  module/wlan: Discovered wireless interface wlan0
+polybar|notice:  Loading module 'powermenu' of type 'custom/menu'
+polybar|notice:  Loaded 10 modules
+polybar|notice:  Loaded font "FiraCode Nerd Font SemBd:size=12" (name=FiraCode Nerd Font, offset=2, file=/usr/share/fonts/TTF/FiraCodeNerdFont-SemiBold.ttf)
+polybar|notice:  Loaded font "Symbols Nerd Font:size=12" (name=Symbols Nerd Font, offset=2, file=/usr/share/fonts/TTF/SymbolsNerdFont-Regular.ttf)
+polybar|notice:  Loaded font "Noto Color Emoji=12" (name=Noto Sans, offset=2, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Received signal(2): Interrupt
+polybar|notice:  Termination signal received, shutting down...
+polybar|notice:  Parsing config file: /home/quintana/.config/polybar/config.ini
+polybar|notice:  Listening for IPC messages (PID: 171883)
+polybar|notice:  Loading module 'xworkspaces' of type 'internal/xworkspaces'
+polybar|notice:  Loading module 'cava' of type 'custom/script'
+polybar|notice:  Loading module 'pulseaudio' of type 'internal/pulseaudio'
+polybar|notice:  pulseaudio: using default sink alsa_output.pci-0000_07_00.6.HiFi__Headphones__sink
+polybar|notice:  Loading module 'battery' of type 'internal/battery'
+polybar|notice:  Loading module 'date' of type 'internal/date'
+polybar|notice:  Loading module 'memory' of type 'internal/memory'
+polybar|notice:  Loading module 'cpu' of type 'internal/cpu'
+polybar|notice:  Loading module 'eth' of type 'internal/network'
+polybar|notice:  module/eth: Discovered wired interface enp5s0
+polybar|notice:  Loading module 'wlan' of type 'internal/network'
+polybar|notice:  module/wlan: Discovered wireless interface wlan0
+polybar|notice:  Loading module 'powermenu' of type 'custom/menu'
+polybar|notice:  Loaded 10 modules
+polybar|notice:  Loaded font "FiraCode Nerd Font SemBd:size=12" (name=FiraCode Nerd Font, offset=2, file=/usr/share/fonts/TTF/FiraCodeNerdFont-SemiBold.ttf)
+polybar|notice:  Loaded font "Symbols Nerd Font:size=12" (name=Symbols Nerd Font, offset=2, file=/usr/share/fonts/TTF/SymbolsNerdFont-Regular.ttf)
+polybar|notice:  Loaded font "Noto Color Emoji=12" (name=Noto Sans, offset=2, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|notice:  pulseaudio: using default sink alsa_output.pci-0000_07_00.1.HiFi__HDMI2__sink
+polybar|notice:  pulseaudio: using default sink alsa_output.pci-0000_07_00.1.HiFi__HDMI2__sink
+polybar|notice:  pulseaudio: using default sink alsa_output.pci-0000_07_00.1.HiFi__HDMI2__sink
+polybar|notice:  pulseaudio: using default sink alsa_output.pci-0000_07_00.1.HiFi__HDMI2__sink
+polybar|notice:  pulseaudio: using default sink alsa_output.pci-0000_07_00.6.HiFi__Speaker__sink
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|warn:  Using the named pipe at '/tmp/polybar_mqueue.171883' for ipc is deprecated, always use 'polybar-msg'
+polybar|notice:  Received signal(15): Terminated
+polybar|notice:  Termination signal received, shutting down...
