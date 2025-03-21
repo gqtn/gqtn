@@ -1,0 +1,16 @@
+==============================================================
+Extract a YouTube live:
+
+1. Firstly, list the options with:
+
+    $ yt-dlp --list-formats {youtube_link}
+
+2. Choose the correct option and extract the valid HLS:
+
+    $ yt-dlp -f {option} -g {youtube_link}
+
+3. Create a FFmpeg script with HLS stream
+==============================================================
+Download YouTube file:
+
+yt-dlp -f bestvideo[ext=mp4]+bestaudio[ext=m4a] {youtube_link}

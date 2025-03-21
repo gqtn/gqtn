@@ -1,0 +1,10 @@
+sudo mdadm --stop /dev/md{}
+
+sudo mdadm --assemble --run /dev/md{} /dev/sd{}
+
+mkdir /chroot
+
+d=/chroot
+
+mount /dev/md{} $d
+
