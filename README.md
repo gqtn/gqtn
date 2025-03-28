@@ -27,7 +27,7 @@ You can check out my archives [here](https://github.com/gqtn/gqtn/tree/main/dotf
 
 | System | Name | Project site |
 | --- | --- | --- |
-| OS | EndeavourOS | https://endeavouros.com/ |
+| OS | Void Linux | https://voidlinux.org/ |
 | TWM | i3wm | https://i3wm.org/ |
 | Bar | Polybar | https://polybar.github.io/ |
 | Menu | Rofi | https://github.com/davatorium/rofi |
