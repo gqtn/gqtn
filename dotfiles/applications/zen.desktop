@@ -4,5 +4,6 @@ Version=1.0
 Type=Application
 Exec=/home/gabriel/.zen/zen-bin %u
 Icon=/home/gabriel/.zen/browser/chrome/icons/default/default128.png
-Name=Zen
+Name=Zen Browser
+GenericName=Firefox Based Browser
 Comment=Custom definition for Zen
