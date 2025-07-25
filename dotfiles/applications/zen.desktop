@@ -1,6 +1,8 @@
 [Desktop Entry]
-Terminal=false
+Encoding=UTF-8
+Version=1.0
 Type=Application
-Name=Twitter (X)
-Exec=/home/gabriel/Binapps/zen/zen-bin
-Icon=~/.local/share/applications/icons/x.png
+Exec=/home/gabriel/.zen/zen-bin %u
+Icon=/home/gabriel/.zen/browser/chrome/icons/default/default128.png
+Name=Zen
+Comment=Custom definition for Zen
