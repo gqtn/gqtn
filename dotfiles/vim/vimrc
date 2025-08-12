@@ -67,5 +67,8 @@ set relativenumber
 " Ativar/desativar o modo paste com Ctrl+Shift+V
 set pastetoggle=<C-S-v>
 
+" Ativar a área de transferência
+set clipboard^=unnamedplus
+
 hi LineNrAbove guifg=red ctermfg=red
 hi LineNrBelow guifg=green ctermfg=green
