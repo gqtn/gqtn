@@ -1,0 +1,6 @@
+[Desktop Entry]
+Terminal=false
+Type=Application
+Name=Tandem
+Exec=/opt/brave-bin/brave --app="https://app.tandem.net/chats"
+Icon=~/.local/share/applications/icons/tandem.png

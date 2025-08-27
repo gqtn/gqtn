@@ -1,0 +1,7 @@
+[Desktop Entry]
+Terminal=false
+Type=Application
+Name=GitHub Projects
+GenericName=Control
+Exec=/opt/brave-bin/brave --app="https://github.com/users/gqtn/projects/13"
+Icon=~/.local/share/applications/icons/github.png

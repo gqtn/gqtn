@@ -1,0 +1,7 @@
+[Desktop Entry]
+Terminal=false
+Type=Application
+Name=Telegram
+GenericName=Chats
+Exec=/opt/brave-bin/brave --app="https://web.telegram.org/k/"
+Icon=~/.local/share/applications/icons/telegram.png
