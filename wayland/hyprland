@@ -1,0 +1,200 @@
+# ================================
+# +---+ MAIN +---+
+# ================================
+
+# Mod key
+$mod = SUPER
+
+# Font
+# (Usado em barras externas, o Hyprland em si não define fonte)
+# Exemplo: waybar usa “Ubuntu 9”
+
+# ================================
+# +---+ AUTOSTART +---+
+# ================================
+exec-once = dex --autostart --environment Hyprland
+exec-once = setxkbmap -model abnt2 -layout br
+exec-once = ~/.config/hypr/set-workspaces.sh
+exec-once = /usr/libexec/polkit-gnome-authentication-agent-1
+exec-once = xss-lock --transfer-sleep lock -- /usr/bin/v3lock
+exec-once = nm-applet
+exec-once = xset s off -dpms
+exec-once = hyprpaper    # substitui feh
+exec-once = waybar
+exec-once = brightnessctl set 100
+exec-once = insync start &
+
+# ================================
+# +---+ LOOK AND FEEL +---+
+# ================================
+general {
+    gaps_in = 10
+    gaps_out = 3
+    border_size = 1
+    col.active_border = rgba(5294e2ff)
+    col.inactive_border = rgba(08052bff)
+    layout = dwindle
+}
+
+decoration {
+    rounding = 0
+    blur = yes
+    blur_size = 8
+    blur_passes = 2
+    drop_shadow = yes
+    shadow_range = 4
+    shadow_render_power = 3
+    col.shadow = rgba(00000044)
+}
+
+animations {
+    enabled = yes
+    bezier = mycurve, 0.05, 0.9, 0.1, 1.05
+    animation = windows, 1, 7, mycurve
+    animation = border, 1, 10, default
+    animation = fade, 1, 7, mycurve
+    animation = workspaces, 1, 5, mycurve
+}
+
+misc {
+    disable_hyprland_logo = true
+    disable_splash_rendering = true
+}
+
+# ================================
+# +---+ COLOR VARIABLES +---+
+# ================================
+$darkbluetrans = rgba(08052be6)
+$darkblue = rgba(08052bff)
+$lightblue = rgba(5294e2ff)
+$urgentred = rgba(e53935ff)
+$white = rgba(ffffffff)
+$black = rgba(000000ff)
+$purple = rgba(e345ffff)
+$darkgrey = rgba(383c4aff)
+$grey = rgba(b0b5bdff)
+$mediumgrey = rgba(8b8b8bff)
+$yellowbrown = rgba(e1b700ff)
+
+# ================================
+# +---+ WINDOW RULES +---+
+# ================================
+# exemplo do Chrome Apps
+windowrulev2 = float, class:^(crx_nngceckbapebfimnlniiiahkandclblb)$
+windowrulev2 = size 600 200, class:^(crx_nngceckbapebfimnlniiiahkandclblb)$
+
+# ================================
+# +---+ KEYBINDS +---+
+# ================================
+# Launch terminal
+bind = $mod, RETURN, exec, alacritty
+
+# Kill window
+bind = $mod, Q, killactive
+
+# App launcher
+bind = $mod, D, exec, rofi -show drun -modi drun -theme ~/.config/rofi/config.rasi
+
+# Reload / Restart
+bind = $mod SHIFT, C, exec, hyprctl reload
+bind = $mod SHIFT, R, exec, hyprctl restart
+
+# Lock screen
+bind = CTRL $mod, L, exec, ~/.config/hypr/v3lock
+
+# Exit Hyprland
+bind = $mod SHIFT, Q, exit
+
+# ================================
+# +---+ LAYOUT CONTROL +---+
+# ================================
+bind = $mod, E, layoutmsg, focusstack
+bind = $mod, W, layoutmsg, tabbed
+bind = $mod, S, togglefloating
+bind = $mod, F, fullscreen
+bind = $mod, A, togglesplit
+bind = $mod, F11, fullscreen
+
+# ================================
+# +---+ WINDOW FOCUS +---+
+# ================================
+bind = $mod, H, movefocus, l
+bind = $mod, J, movefocus, d
+bind = $mod, K, movefocus, u
+bind = $mod, L, movefocus, r
+bind = $mod, LEFT, movefocus, l
+bind = $mod, DOWN, movefocus, d
+bind = $mod, UP, movefocus, u
+bind = $mod, RIGHT, movefocus, r
+
+# ================================
+# +---+ MOVE WINDOWS +---+
+# ================================
+bind = $mod SHIFT, H, movewindow, l
+bind = $mod SHIFT, J, movewindow, d
+bind = $mod SHIFT, K, movewindow, u
+bind = $mod SHIFT, L, movewindow, r
+bind = $mod SHIFT, LEFT, movewindow, l
+bind = $mod SHIFT, DOWN, movewindow, d
+bind = $mod SHIFT, UP, movewindow, u
+bind = $mod SHIFT, RIGHT, movewindow, r
+
+# ================================
+# +---+ WORKSPACES +---+
+# ================================
+bind = $mod, 1, workspace, 1
+bind = $mod, 2, workspace, 2
+bind = $mod, 3, workspace, 3
+bind = $mod, 4, workspace, 4
+bind = $mod, 5, workspace, 5
+bind = $mod, 6, workspace, 6
+bind = $mod, 7, workspace, 7
+bind = $mod, 8, workspace, 8
+bind = $mod, 9, workspace, 9
+bind = $mod, 0, workspace, 10
+
+bind = $mod SHIFT, 1, movetoworkspace, 1
+bind = $mod SHIFT, 2, movetoworkspace, 2
+bind = $mod SHIFT, 3, movetoworkspace, 3
+bind = $mod SHIFT, 4, movetoworkspace, 4
+bind = $mod SHIFT, 5, movetoworkspace, 5
+bind = $mod SHIFT, 6, movetoworkspace, 6
+bind = $mod SHIFT, 7, movetoworkspace, 7
+bind = $mod SHIFT, 8, movetoworkspace, 8
+bind = $mod SHIFT, 9, movetoworkspace, 9
+bind = $mod SHIFT, 0, movetoworkspace, 10
+
+bind = $mod, TAB, workspace, previous
+
+# ================================
+# +---+ SCREENSHOTS +---+
+# ================================
+bind = , PRINT, exec, grim ~/Pictures/$(date '+%H:%M-%d.%m.%y').png
+bind = $mod, PRINT, exec, grim -g "$(hyprctl activewindow -j | jq -r '.at[0],.at[1],.size[0],.size[1]' | tr '\n' ',' | sed 's/,$//')" ~/Pictures/$(date '+%H:%M-%d.%m.%y').png
+bind = SHIFT, PRINT, exec, grim -g "$(slurp)" ~/Pictures/$(date '+%H:%M-%d.%m.%y').png
+
+# Clipboard (pipe)
+bind = CTRL, PRINT, exec, grim -g "$(slurp)" - | wl-copy
+
+# ================================
+# +---+ AUDIO / BRILHO +---+
+# ================================
+bind = , XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +10%
+bind = , XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -10%
+bind = , XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
+bind = , XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bind = , XF86MonBrightnessUp, exec, brightnessctl set +5%
+bind = , XF86MonBrightnessDown, exec, brightnessctl set 5%-
+
+# ================================
+# +---+ WORKSPACE RULES (optional) +---+
+workspace = 1
+workspace = 2
+workspace = 3
+workspace = 4
+workspace = 5
+workspace = 6
+workspace = 7
+workspace = 8
+workspace = 9
+workspace = 10
