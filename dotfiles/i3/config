@@ -7,6 +7,7 @@ font pango: Ubuntu 9
 # +---+ Startup +---+
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id setxkbmap -model abnt2 -layout br
+exec --no-startup-id $HOME/.config/i3/audio.sh
 exec --no-startup-id $HOME/.config/i3/set-workspaces.sh
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec --no-startup-id xss-lock --transfer-sleep lock -- /usr/bin/v3lock
@@ -16,8 +17,7 @@ exec --no-startup-id picom
 exec --no-startup-id xrdb -merge $HOME/.Xresources
 exec --no-startup-id polybar
 exec --no-startup-id $HOME/.screenlayout/default.sh
-exec --no-startup-id feh --bg-scale $HOME/.config/i3/default.png
-exec --no-startup-id brightnessctl set 100
+exec --no-startup-id brightnessctl set 8000
 exec --no-startup-id insync start &
 
 # +---+ Disabled +---+
@@ -26,6 +26,8 @@ exec --no-startup-id insync start &
 
 # +---+ Windows +---+
 for_window [instance="crx_nngceckbapebfimnlniiiahkandclblb"] floating enable, resize 600 200
+for_window [class="Nm-connection-editor"] floating enable, move position 878px 32px, resize 354px 124px
+for_window [class="pavucontrol"] floating enable, move position 114px 35px, resize 808px 690px
 
 # +---+ General Configuration +---+
 gaps inner 10
@@ -144,10 +146,10 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 
 # +---+ Volume with Pavucontrol +---+
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # +---+ Brilho +---+
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
