@@ -1,0 +1,7 @@
+[Desktop Entry]
+Terminal=false
+Type=Application
+Name=RustDesk
+GenericName=Remote Access
+Exec=/opt/rustdesk/rustdesk-1.4.3-x86_64.AppImage
+Icon=/opt/rustdesk/rustdesk.png

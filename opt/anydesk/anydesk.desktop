@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=AnyDesk
+GenericName=AnyDesk
+Exec=/opt/anydesk/anydesk %u
+Icon=/opt/anydesk/icons/hicolor/256x256/apps/anydesk.png

@@ -1,0 +1,47 @@
+Please only use this package if your distribution is not officially supported
+and we do not provide a package for it. 
+
+If you just need to quickly start a support session, you are fine to run the
+binary file "anydesk" out of the archive (dependencies are at the end of the
+README).
+
+If you need additional features like connecting to your login screen, user
+switching, etc, we recommend installing the global service. To achieve this, you
+ need to install the "anydesk" binary to a location of your choice (we recommend
+ using "/usr/local/bin"), copy the polkit action to your polkits policy folder
+(default: "/usr/share/polkit-1/actions", please consult your distros manual) and
+ copy either the systemd service file or the init.d service file to the place
+your distro uses (see distros manual as these locations might differ), edit this
+ file to point to the correct binary path for AnyDesk and then enable and start
+the service.
+Alternatively, you can use install.sh bash script which will automatically
+install anydesk to default/recommended locations for you. But please note that
+it might not work for some very specific distros; also only systemd is supported.
+For usage/help run the script without args: ./install.sh
+
+In order to run the AnyDesk binary, make sure all dependencies are met. We
+recommend running it from the commandline and observe the error messages from
+the loader to determine which libraries are missing. These are the libs that
+AnyDesk needs to run:
+
+Mandatory libraries:
+libglib (>= 2.16)
+libgtk3
+libcairo
+libpango
+libx11
+libxcb
+libxcb-shm
+libxrandr (>= 1.3)
+libx11-xcb
+libxtest
+libxfixes
+libxdamage
+libxinput
+libxrender
+libgtkglext
+libpolkit-gobject
+
+Optional libraries:
+libpulse
+libpulse-simple (needed for audio support)
