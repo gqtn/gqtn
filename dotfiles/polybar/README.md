@@ -10,7 +10,7 @@ I have some specific files to:
 Also, I have two Bash scripts:
 
 - `cava.sh` to use `cava` software to show a sound bars in status bar
-- `updates.sh` to check available updates using `XBPS`
+- `updates.sh` to check available updates using `pacman`
 
 ---
 
