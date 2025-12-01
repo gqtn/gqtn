@@ -1,0 +1,33 @@
+[general]
+live_config_reload = true
+import = [
+    "~/.config/alacritty/themes/argonaut.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+dynamic_padding = true
+padding.x = 15
+padding.y = 15
+opacity = 0.80
+blur = true
+decorations = "Full"
+
+[selection]
+save_to_clipboard = true
+
+[font]
+size = 11
+normal={ family = "JetBrainsMono NFM", style = "Medium" }
+offset={ x = 0, y = 2 }
+
+[keyboard]
+bindings = [
+
+	{ key = "V", mods = "Control|Shift", action = "Paste" }
+]
+
+[debug]
+log_level = "Error"
