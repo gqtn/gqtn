@@ -1,0 +1,78 @@
+# DEFAULT CONFIGURATION
+# Check if the shell is interactive
+case $- in
+  *i*) ;;
+  *) return;;
+esac
+
+# HISTORY CONFIGURATION
+# Ignore duplicate commands and commands that start with a space
+HISTCONTROL=ignoreboth
+# Set the history size
+HISTSIZE=1000
+HISTFILESIZE=2000
+# Append to the history file instead of overwriting it
+shopt -s histappend
+# Check the window size after each command
+shopt -s checkwinsize
+
+# BASH COMPLETION
+# Load bash completion if available
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+# ALIASES AND FUNCTIONS
+# Load custom aliases and functions
+[[ -f $HOME/.bash-alias ]] && . $HOME/.bash-alias
+[[ -f $HOME/.bash-functions ]] && . $HOME/.bash-functions
+
+# LANGUAGE CONFIGURATION
+# Set the locale to English (US)
+export LC_ALL=en_US.UTF-8
+
+# PS1 CUSTOMIZATION
+# Define a function to parse the current Git branch
+function parse_git_dirty {
+  # Check if the repository is dirty
+  [[ $(git status --porcelain 2> /dev/null) ]] && echo "*"
+}
+
+function parse_git_branch {
+  # Get the current Git branch
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ (\1$(parse_git_dirty))/"
+}
+
+# Set the PS1 prompt
+PS1="\n\[$(tput setaf 168)λ \[$(tput setaf 6)\w\[$(tput setaf 214)\$(parse_git_branch)\[$(tput sgr0)\]\n\n"
+
+# ASDF ENVIRONMENT
+# Load ASDF environment (commented out by default)
+# export PATH=$PATH:$HOME/.bin
+# export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# . <(asdf completion bash)
+
+# RUST ENVIRONMENT
+# Load Rust environment (commented out by default)
+# . "$HOME/.asdf/installs/rust/stable/env"
+
+# VIM CONFIGURATION
+# Set the editor for sudo
+SUDO_EDITOR=/usr/bin/vim
+export SUDO_EDITOR
+
+# TMUX STARTUP
+# Start tmux if available
+if command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ] && [ -n "$PS1" ] && [[ "$TERM" != "linux" ]]; then
+  tmux new-session
+fi
+
+# I3 STARTUP
+# Start i3 (commented out by default)
+# if [ -n "${XDG_VTNR:-}" ] && [ "${XDG_VTNR:-0}" -eq 1 ]; then
+#   exec dbus-run-session i3
+# fi
