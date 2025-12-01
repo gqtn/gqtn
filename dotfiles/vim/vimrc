@@ -1,0 +1,30 @@
+" My simple Vim configuration
+" Improving always! :)
+
+" Turn syntax highlighting on
+syntax on
+
+" Other good options
+set autoindent    " Auto-indent new lines
+set shiftwidth=4  " Number of auto-indent spaces
+set shiftwidth=4  " Enable smart-tabs
+set smartindent    " Enable smart-indent
+set smarttab    " Enable smart-tabs
+set softtabstop=4  " Number of spaces per Ta
+set hlsearch    " highlight search results
+set ignorecase    " do case insensitive search
+set expandtab    " fill tabs with spaces
+set nojoinspaces  " no extra space after '.' when joining lines
+set relativenumber
+
+
+" Ativar/desativar o modo paste com Ctrl+Shift+V
+set pastetoggle=<C-S-v>
+
+" Ativar a área de transferência
+set clipboard^=unnamedplus
+
+hi LineNrAbove guifg=red ctermfg=red
+hi LineNrBelow guifg=green ctermfg=green
+
+set clipboard=unnamedplus
