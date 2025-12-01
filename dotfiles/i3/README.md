@@ -12,7 +12,7 @@ You can check it fully [here](config).
 
 **Wallpaper**
 
-![Wallpaper](./default.png)
+![Wallpaper](./pixar.png)
 
 ---
 
