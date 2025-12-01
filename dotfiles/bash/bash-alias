@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# +---+ Bash Alias +---+
+# by Gabriel Quintana
+
+# Basic
+# lsd instead ls
+alias ls='lsd'
+alias ll='ls -lh'
+alias la='ls -lha'
+
+# bat instead cat
+alias cat="bat"
+alias pcat="bat -p"
+
+# exa instead lsd
+alias exa='exa \
+    --tree \
+    --level=1 \
+    --color=always \
+    --long \
+    --total-size \
+    --icons \
+    --header'
+
+# Interesting
+alias figlet="figlet -f big"
+alias tree='tree -C -L1 -h'
+alias clipb='xclip -selection clipboard -i'
+alias fetch='fastfetch -c $HOME/.config/fastfetch/neofetch.jsonc'
+
+# Proxy configuration
+alias mitmproxy="mitmproxy \
+    --set validate_inbound_headers=false \
+    --set view_order_reversed=true \
+    --set console_focus_follow=true \
+    --set console_flowlist_layout=table"
+
+# FFmpeg without banner
+alias ffmpeg='ffmpeg -hide_banner'
+alias ffplay='ffplay -hide_banner'
+alias ffprobe='ffprobe -hide_banner'
+
+# Shell translations
+alias por='trans -I -b :pt-BR'
+alias eng='trans -I -b :en'
+alias spa='trans -I -b :es'
