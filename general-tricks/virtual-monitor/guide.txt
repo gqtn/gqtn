@@ -1,0 +1,28 @@
+- Descompactar o arquivo zip
+- copiar pasta usbmmidd_v2 na raiz do drive C, ou outra pasta de sua preferência
+- abrir o termina lde comando (cmd)
+- acessar a pasta usbmmidd_v2
+- executar o comando 
+    deviceinstaller64 install usbmmidd.inf usbmmidd
+obs: para sistema 32 bits, usar deviceinstaller ao inves de deviceinstaller64.
+
+===================================
+
+com os procedimentos acima, o driver do monitor virtual estará instalado.
+o próximo passo será ativar ou desativar o monitor virtual na linha de comando
+
+Ativar monitor= deviceinstaller64 enableidd 1
+Desativar monitor= deviceinstaller64 enableidd 0
+
+Caso deseje, execute os arquivos de lote (bat) abaixo
+
+Para ativar o monitor virtual execute o comando
+  Mon-ON.bat
+
+Para desativar o monitor virtual execute o comando
+  Mon-OFF.bat
+
+===================================
+
+ATENÇÃO: ao inicar o computador, o monitor virtua estará sempre desativado. Caso deseje que o monitor virtual inicie automaticamente, pode ser criado uma rotina para executar o Mon-ON.bat nos comsndo de inicar do Windows ou também pelo agendador de tarefas.
+
