@@ -28,6 +28,8 @@ alias figlet="figlet -f big"
 alias tree='tree -C -L1 -h'
 alias clipb='xclip -selection clipboard -i'
 alias fetch='fastfetch -c $HOME/.config/fastfetch/neofetch.jsonc'
+alias fastfetch='fastfetch -c /usr/share/fastfetch/presets/examples/8.jsonc'
+alias glow='glow -p'
 
 # Proxy configuration
 alias mitmproxy="mitmproxy \
