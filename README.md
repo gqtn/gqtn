@@ -21,7 +21,7 @@ I currently work at an audiovisual solutions integration company, focusing on:
 
 ---
 ### 💻 Dotfiles
-![Print](./prints.png)
+![Print](./print.png)
 
 You can check out my archives [here](https://github.com/gqtn/gqtn/tree/main/dotfiles). A brief summary of what I'm using:
 
