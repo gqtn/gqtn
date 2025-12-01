@@ -1,0 +1,203 @@
+#!/bin/bash
+
+# BASH FUNCTIONS
+# by Gabriel Quintana
+
+# for DDoS test
+ddos(){
+    sudo slowhttptest \
+    -c 10000 \
+    -H \
+    -i 1 \
+    -r 10000 \
+    -u "$1"
+}
+
+
+# Check fonts
+fontchecker(){
+    fc-list : family |grep -i "$1"
+}
+
+
+# Quick command for PasteBin
+# using https://0x0.st
+pastebin(){
+    curl -F "file=@"$1"" \
+    -Fexpires=24 \
+    https://0x0.st
+}
+
+
+# Cheat commands
+# using cheat.sh
+cheat(){
+    if [[ "$1" ]]; then
+        curl "https://cheat.sh/$1"
+    else
+            echo 'Command not found. Sorry! :('
+    fi
+}
+
+
+# Simplified git commit
+gc() {
+  if [[ -n "$1" ]]; then
+    git commit -m "$*"
+  else
+    echo "Error: no commit message provided!"
+    return 1
+  fi
+}
+
+
+# Git add, commit and push
+gpa() {
+  git add -A
+  git commit -m "${*^}"
+  git push
+}
+
+
+# Rename files to lower case and replace spaces to -
+mvlower() {
+  for file in *; do
+    newname="${file,,}"
+    newname="${newname//[áãâ]/a}"
+    newname="${newname//[é]/e}"
+    newname="${newname//[í]/i}"
+    newname="${newname//[ó]/o}"
+    newname="${newname//[ú]/u}"
+    newname="${newname//[ç]/c}"
+    newname="${newname//\(/}"
+    newname="${newname//\)/}"
+    newname="${newname// /-}"
+    mv "$file" "$newname" >/dev/null
+  done
+}
+
+# Rename files to upper case and replace spaces to -
+mvupper() {
+  for file in *; do
+    newname="${file^^}"
+    newname="${file//[ÁÃÂ]/A}"
+    newname="${file//[É]/E}"
+    newname="${file//[Í]/I}"
+    newname="${file//[Ó]/O}"
+    newname="${file//[Ú]/U}"
+    newname="${file//[Ç]/C}"
+    newname="${newname// /-}"
+    mv "$file" "$newname" >/dev/null
+  done
+}
+
+
+# Create and go 
+mkcd(){
+    mkdir -p $1
+    cd $1
+}
+
+
+# History + grep
+hg(){
+    history | grep "$1";
+}
+
+
+# Stream Test
+streamscan(){
+    echo -e "\n"
+    while read -r url; do
+        if ! timeout 30s ffprobe "$url" 2>&1 |grep -i "input" > /dev/null; then
+            echo "$url = Timeout! Error."; else
+	    echo "$url = OK"
+        fi
+    done < "$1"
+    echo -e "\n"
+}
+
+
+# Public IP
+mypublic-ip(){
+response=$(curl -s "https://api.myip.com/")
+ip=$(echo $response |jq -r '.ip')
+country=$(echo $response |jq -r '.country')
+
+echo "IP:       $ip"
+echo "Country:  $country"
+}
+
+
+# FFprobe
+probets() {
+	
+	script=$(timeout 30s ffprobe -hide_banner -v quiet -show_streams -show_format "$1" -of json)
+
+	if [[ -z "$script" || "$(echo "$script" |jq -r .format.filename)" == "null" ]]; then
+		echo -e "
+	# # # # # # # # # # # # # # # # # # # # # # # # # #
+	#  Error:  No valid data found or invalid URL.  #
+	# # # # # # # # # # # # # # # # # # # # # # # # # #\n\n"
+		return 1
+	fi
+
+
+	url=$(echo "$script" |jq -r .format.filename)
+	format=$(echo "$script" |jq -r .format.format_long_name)
+	
+	s0_name=$(echo "$script" | jq -r .streams[0].codec_long_name)
+	s0_pid=$(echo "$script" | jq -r .streams[0].codec_tag)
+	
+	s1_name=$(echo "$script" | jq -r .streams[1].codec_long_name)
+	s1_pid=$(echo "$script" | jq -r .streams[1].codec_tag)
+	
+	s2_name=$(echo "$script" | jq -r .streams[2].codec_long_name)
+	s2_pid=$(echo "$script" | jq -r .streams[2].codec_tag)
+	
+	s3_name=$(echo "$script" | jq -r .streams[3].codec_long_name)
+	s3_pid=$(echo "$script" | jq -r .streams[3].codec_tag)
+	
+	s4_name=$(echo "$script" | jq -r .streams[4].codec_long_name)
+	s4_pid=$(echo "$script" | jq -r .streams[4].codec_tag)
+
+
+	echo -e " 
+	# # # # # # # # # # # # #
+	#  The source is OK!   #
+	# # # #	# # # # # # # # #\n\n"
+
+	echo -e "URL:    $url"
+       	echo -e "Format: $format\n\n"
+	
+	echo -e "PID 0:	$s0_pid\n$s0_name\n"
+	
+	
+	if [[ "$s1_pid" == null ]]; then
+		echo -e "PID 1: No data\n"
+	else
+		echo -e "PID 1:	$s1_pid\n$s1_name\n"
+	fi
+
+
+	if [[ "$s2_pid" == null ]]; then
+		echo -e "PID 2: No data\n"
+	else
+		echo -e "PID 2:	$s2_pid\n$s2_name\n"
+	fi
+	
+
+	if [[ "$s3_pid" == null ]]; then
+		echo -e "PID 3: No data\n"
+	else
+		echo -e "PID 3:	$s3_pid\n$s3_name\n"
+	fi
+
+
+	if [[ "$s4_pid" == null ]]; then
+		echo -e "PID 4: No data\n\n"
+	else
+		echo -e "PID 4: $s4_pid\n$s4_name\n\n"
+	fi
+
+}
