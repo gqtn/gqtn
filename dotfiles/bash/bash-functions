@@ -3,6 +3,24 @@
 # BASH FUNCTIONS
 # by Gabriel Quintana
 
+# Quick web server with Python
+web_server(){
+
+    local IPS=$(ip -br -c a)
+
+    echo -e "Check the IPs:\n"
+    echo "$IPS"
+    echo
+
+    read -p "Choose an IP ?" eth
+
+    python3.14 \
+    -m http.server \
+    --bind "$eth" \
+    9000
+}
+
+
 # for DDoS test
 ddos(){
     sudo slowhttptest \
@@ -11,6 +29,17 @@ ddos(){
     -i 1 \
     -r 10000 \
     -u "$1"
+}
+
+
+# Quick FFprobe test
+probequick(){
+    while read -r url; do
+        if ! timeout 30s ffprobe -hide_banner -i \
+            "$url" 2>&1 | grep "Input"; then
+            echo "$url = Timeout"
+        fi
+    done < "$1"
 }
 
 
