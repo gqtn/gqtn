@@ -52,9 +52,9 @@ PS1="\n\[$(tput setaf 168)λ \[$(tput setaf 6)\w\[$(tput setaf 214)\$(parse_git_
 
 # ASDF ENVIRONMENT
 # Load ASDF environment (commented out by default)
-# export PATH=$PATH:$HOME/.bin
-# export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-# . <(asdf completion bash)
+export PATH=$PATH:$HOME/.bin
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+ . <(asdf completion bash)
 
 # RUST ENVIRONMENT
 # Load Rust environment (commented out by default)
