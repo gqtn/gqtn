@@ -15,7 +15,7 @@ I've compiled this binary with `cover` feature:
 ---
 ### 🧰 Requeriments:
 
-`dbus, libncurses, libssl, libpulse, libxcb, ueberzug`
+`dbus, libncurses, libssl, libpulse, libxcb, ueberzugpp`
 
 You can check more in:
 - New package request in [Void repo](https://github.com/void-linux/void-packages/pull/33600)
