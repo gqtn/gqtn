@@ -47,3 +47,4 @@ alias ffprobe='ffprobe -hide_banner'
 alias por='trans -I -b :pt-BR'
 alias eng='trans -I -b :en'
 alias spa='trans -I -b :es'
+

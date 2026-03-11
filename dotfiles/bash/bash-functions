@@ -149,10 +149,11 @@ streamscan(){
 
 # Public IP
 mypublic-ip(){
-response=$(curl -s "https://api.myip.com/")
+response=$(curl -s "https://api4.my-ip.io/v2/ip.json")
 ip=$(echo $response |jq -r '.ip')
-country=$(echo $response |jq -r '.country')
+country=$(echo $response |jq -r '.country.name')
 
+echo
 echo "IP:       $ip"
 echo "Country:  $country"
 }
@@ -230,3 +231,10 @@ probets() {
 	fi
 
 }
+
+# Open a browser tab like an app
+
+appbrowser(){
+	vivaldi --app="http://"$1""
+}
+
