@@ -76,3 +76,4 @@ fi
 # if [ -n "${XDG_VTNR:-}" ] && [ "${XDG_VTNR:-0}" -eq 1 ]; then
 #   exec dbus-run-session i3
 # fi
+
