@@ -234,7 +234,7 @@ probets() {
 
 # Open a browser tab like an app
 appbrowser(){
-	vivaldi --app="http://"$1""
+	brave --app="http://"$1""
 }
 
 
