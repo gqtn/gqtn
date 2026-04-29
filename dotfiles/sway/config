@@ -24,13 +24,12 @@ workspace 1 output eDP-1
 
 # +---+ Papel de Parede (Substitui o feh e wallpapers.sh) +---+
 include ~/.config/sway/outputs
-output * scale 1.25 bg /home/gabriel/drive/wallpapers/coffee.jpg fill
+output * bg /home/gabriel/drive/wallpapers/coffee.jpg fill
 
 # +---+ Startup +---+
 # O Sway não precisa do picom nem de scripts de screenlayout externos
 
 exec swaync
-exec $HOME/.config/sway/v3lock.sh
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec brightnessctl set 8000
