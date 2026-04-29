@@ -234,7 +234,7 @@ probets() {
 
 # Open a browser tab like an app
 appbrowser(){
-	brave --app="http://"$1""
+	vivaldi-stable --app="http://"$1""
 }
 
 
@@ -245,21 +245,22 @@ echo '{
     { "type": "command", "key": " ", "text": "cowsay 'I use Arch, btw' && echo"},
     "title", "separator", "os", "host", "kernel", "uptime", "separator", "cpu", "gpu", "separator", "packages"
   ]
-}' | fastfetch -c - -l GNU --color-title blue --color-keys red --logo-padding-right 80 --logo-position right
+}' | fastfetch -c - -l none --color-title blue --color-keys red
 }
 
 # Simple script to select a wallpaper:
 selectwallpaper(){
 
-	cd $HOME/Drive/Wallpapers/ || exit 1
+	cd $HOME/drive/wallpapers/ || exit 1
 	
-	echo -e "\nSelecting file in "$HOME/Drive/Wallpapers/"\n"
+	echo -e "\nSelecting file in "$HOME/drive/wallpapers/"\n"
 
 	PS3="Choose the wallpaper by number: "
 
 	select file in *; do
 		feh --bg-fill $file
-		echo "feh --bg-fill $HOME/Drive/Wallpapers/$file" > $HOME/.config/i3/wallpapers.sh
+		echo "feh --bg-fill $HOME/drive/wallpapers/$file" > $HOME/.config/i3/wallpapers.sh
 		break
 	done
 }
+
