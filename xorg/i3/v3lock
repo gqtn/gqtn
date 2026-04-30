@@ -1,0 +1,12 @@
+#!/bin/bash
+
+### Default icon
+overlay="$HOME/.config/i3/icon.png"
+
+### Script
+rm /tmp/current*.png
+
+scrot -z /tmp/current.png
+magick /tmp/current.png -blur 0x5 /tmp/current_blur.png
+composite -gravity southeast $overlay /tmp/current_blur.png /tmp/lock.png
+i3lock -i /tmp/lock.png
