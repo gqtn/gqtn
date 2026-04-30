@@ -72,3 +72,5 @@ set clipboard^=unnamedplus
 
 hi LineNrAbove guifg=red ctermfg=red
 hi LineNrBelow guifg=green ctermfg=green
+
+nnoremap <Esc> :noh<CR>
