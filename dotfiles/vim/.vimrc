@@ -1,4 +1,4 @@
-" Firstly, install Vundle to get plugins:
+"Firstly, install Vundle to get plugins:
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 " Set some required specs:
@@ -31,6 +31,7 @@ call vundle#end()
 
 "Some configurations for plugins:
 let g:airline_theme='alduin'
+let g:airline_powerline_fonts = 1
 let vim_markdown_preview_github=1
 let g:AutoPairs = {'(': ')', '[': ']', '{': '}', '"': '"', "'": "'", '```': '```' }
 
