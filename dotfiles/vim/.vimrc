@@ -24,6 +24,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'aymericbeaumet/symlink.vim'
 
 call vundle#end()
 " END PLUGIN !!
@@ -74,6 +75,3 @@ hi LineNrAbove guifg=red ctermfg=red
 hi LineNrBelow guifg=green ctermfg=green
 
 nnoremap <Esc> :noh<CR>
-set autochdir
-
-let g:fugitive_realpath=0
