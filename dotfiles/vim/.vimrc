@@ -40,7 +40,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 
 " Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
+" autocmd VimEnter * NERDTree | wincmd p
 
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
@@ -74,3 +74,6 @@ hi LineNrAbove guifg=red ctermfg=red
 hi LineNrBelow guifg=green ctermfg=green
 
 nnoremap <Esc> :noh<CR>
+set autochdir
+
+let g:fugitive_realpath=0
