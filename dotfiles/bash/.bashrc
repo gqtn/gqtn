@@ -1,4 +1,4 @@
-# DEFAULT CONFIGURATION
+    # DEFAULT CONFIGURATION
 # Check if the shell is interactive
 case $- in
   *i*) ;;
@@ -78,3 +78,5 @@ fi
 # fi
 
 echo "export MOZ_USE_XINPUT2=1" >> ~/.profile
+
+export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
