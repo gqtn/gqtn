@@ -11,6 +11,7 @@
 - [multicast](#Multicast)
 - [cURL](#cURL)
 - [iwlwifi](#iwlwifi)
+- [Browser](#Browsers)
 
 ---
 ### ArchWay
@@ -240,4 +241,10 @@ sudo dhclient wlp1s0
 ```
 sudo lsmod | grep -o -e ^iwlmvm -e ^iwldvm -e ^iwlwifi | xargs sudo rmmod && sleep 3 && sudo modprobe iwlwifi swcrypto=0
 ```
+
 ---
+### Browsers
+
+- In Chromium browsers (like Brave Browser or Vivaldi), you can enable the touchpad scroll for history, just add: `--enable-features=TouchpadOverscrollHistoryNavigation` in `.desktop` file.
+
+- In Brave Browser, you can debloat it using *policies*, just add the [correct code](https://github.com/gqtn/gqtn/blob/main/policies/brave-policies.json) in `/etc/brave/policies/managed/policies.json`.
