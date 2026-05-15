@@ -24,7 +24,7 @@ workspace 1 output eDP-1
 
 # +---+ Papel de Parede (Substitui o feh e wallpapers.sh) +---+
 include ~/.config/sway/outputs
-output * bg /home/gabriel/drive/wallpapers/coffee.jpg fill
+output * bg /home/gabriel/drive/wallpapers/wallpaper.png fill
 
 # +---+ Startup +---+
 # O Sway não precisa do picom nem de scripts de screenlayout externos
@@ -39,10 +39,7 @@ exec insync start
 
 exec swayidle -w \
     timeout 300 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"'
-
-# +---+ Windows +---+
-for_window [instance="crx_nngceckbapebfimnlniiiahkandclblb"] floating enable, resize 600 200
+    resume 'swaymsg "output * dpms on"' \
 
 # +---+ General Configuration +---+
 gaps inner 10
