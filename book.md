@@ -1,19 +1,37 @@
 # My Book
 
-🧰 Under building...
-
-
-Just a test
 ---
 
 ### Steps
 
+- [Arch Linux](#ArchWay)
 - [General Things](#General)
 - [chmod](#chmod)
 - [iperf](#iperf)
 - [multicast](#Multicast)
 - [cURL](#cURL)
 - [iwlwifi](#iwlwifi)
+
+---
+### ArchWay
+
+Remove unsued packages:
+`sudo pacman -Rns $(pacman -Qtdq)`
+
+Checar espaço ocupado por logs:
+`journalctl --disk-usage`
+
+Manter apenas os 50MB mais recentes:
+`sudo journalctl --vacuum-size=50M`
+
+Apagar logs mais antigos que 2 semanas:
+`sudo journalctl --vacuum-time=2weeks`
+
+Remover pacotes órfãos no Arch Linux:
+`sudo pacman -Rns $(pacman -Qdtq)`
+
+Clean pacman cache:
+`sudo pacman -Sc`
 
 ---
 ### General
@@ -24,6 +42,9 @@ If you do not want to get notification with screen lock, just enable this option
 ```
 unredir-if-possible = true
 ```
+
+- Config editor for git: `git config --global core.editor vim`
+
 
 - If you need _Nerd Giphs_, you can download it [here](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/NerdFontsSymbolsOnly.zip).
 - `QT` Theme with defaul `GTK` (basic):
