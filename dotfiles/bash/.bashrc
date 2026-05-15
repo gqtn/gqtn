@@ -76,5 +76,3 @@ fi
 # if [ -n "${XDG_VTNR:-}" ] && [ "${XDG_VTNR:-0}" -eq 1 ]; then
 #   exec dbus-run-session i3
 # fi
-
-echo "export MOZ_USE_XINPUT2=1" >> ~/.profile
