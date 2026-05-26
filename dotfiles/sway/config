@@ -24,7 +24,7 @@ workspace 1 output eDP-1
 
 # +---+ Papel de Parede (Substitui o feh e wallpapers.sh) +---+
 include ~/.config/sway/outputs
-output * bg /home/gabriel/drive/wallpapers/wallpaper.png fill
+output * bg /home/gabriel/drive/wallpapers/default.png fill
 
 # +---+ Startup +---+
 # O Sway não precisa do picom nem de scripts de screenlayout externos
@@ -42,9 +42,9 @@ exec swayidle -w \
     resume 'swaymsg "output * dpms on"' \
 
 # +---+ General Configuration +---+
-gaps inner 10
+gaps inner 5
 gaps outer 5
-default_border pixel 3
+default_border pixel 2
 default_floating_border pixel 1
 title_align center
 

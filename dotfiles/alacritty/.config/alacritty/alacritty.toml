@@ -11,7 +11,7 @@ TERM = "xterm-256color"
 dynamic_padding = true
 padding.x = 15
 padding.y = 15
-opacity = 0.50
+opacity = 0.80
 blur = true
 decorations = "Full"
 
@@ -19,7 +19,7 @@ decorations = "Full"
 save_to_clipboard = true
 
 [font]
-size = 10
+size = 13
 #normal={ family = "Hack Nerd Font Mono" }
 normal={ family = "JetBrainsMono NFM", style = "Medium" }
 offset={ x = 0, y = 2 }

@@ -258,8 +258,8 @@ selectwallpaper(){
 	PS3="Choose the wallpaper by number: "
 
 	select file in *; do
-		feh --bg-fill $file
-		echo "feh --bg-fill $HOME/drive/wallpapers/$file" > $HOME/.config/i3/wallpapers.sh
+      rm default.png
+      ln -s $HOME/drive/wallpapers/$file $HOME/drive/wallpapers/default.png
 		break
 	done
 }

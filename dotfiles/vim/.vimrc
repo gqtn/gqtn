@@ -14,6 +14,7 @@ call vundle#begin()
  
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'Maxim4711/glow.vim'
 Plugin 'vim-airline/vim-airline' 
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'iamcco/markdown-preview.nvim'
@@ -76,3 +77,6 @@ hi LineNrAbove guifg=red ctermfg=red
 hi LineNrBelow guifg=green ctermfg=green
 
 nnoremap <Esc> :noh<CR>
+
+let g:glow_render_colors = 1
+set splitright
