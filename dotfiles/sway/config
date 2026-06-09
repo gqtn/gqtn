@@ -189,3 +189,15 @@ client.focused          $lightblue  $darkblue   $white      $mediumgrey  $medium
 client.unfocused        $darkblue   $darkblue   $grey       $darkgrey    $darkgrey
 client.focused_inactive $darkblue   $darkblue   $grey       $black       $black
 client.urgent           $urgentred  $urgentred  $white      $yellowbrown $yellowbrown
+
+
+# Exemplo de adições para o SwayFX
+corner_radius 10
+shadows on
+shadow_blur_radius 15
+
+# Ativar blur nas janelas (ex: deixa o terminal semi-transparente e borrado)
+#blur on
+#blur_xray off
+#blur_passes 3
+#blur_radius 5

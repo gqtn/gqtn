@@ -239,10 +239,10 @@ appbrowser(){
 
 
 # Fastfetch
+#     : '{ "type": "command", "key": " ", "text": "cowsay 'I use Arch, btw' && echo"},'
 fetch(){
-echo '{
+echo && echo '{
   "modules": [
-    { "type": "command", "key": " ", "text": "cowsay 'I use Arch, btw' && echo"},
     "title", "separator", "os", "host", "kernel", "uptime", "separator", "cpu", "gpu", "separator", "packages"
   ]
 }' | fastfetch -c - -l none --color-title blue --color-keys red
