@@ -104,8 +104,8 @@
             "critical": 5
         },
         "format": "{icon} {capacity}%",
-        "format-charging": "  {capacity}%",
-        "format-full": "<span color='#50FA7B'> </span> {capacity}%",
+        "format-charging": "  ",
+        "format-full": "<span color='#51FA7B'> </span>",
         "format-critical": "<span color='#FF5555'>Warning!!  </span> {capacity}%",
         "format-icons": [
             "<span color='#FF5555'> </span>",
