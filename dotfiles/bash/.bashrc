@@ -64,6 +64,8 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 # Set the editor for sudo
 SUDO_EDITOR=/usr/bin/vim
 export SUDO_EDITOR
+export XDG_CURRENT_DESKTOP=sway
+
 
 # TMUX STARTUP
 # Start tmux if available
@@ -74,5 +76,5 @@ export SUDO_EDITOR
 # I3 STARTUP
 # Start i3 (commented out by default)
 # if [ -n "${XDG_VTNR:-}" ] && [ "${XDG_VTNR:-0}" -eq 1 ]; then
-#   exec dbus-run-session i3
+#   exec dbus-run-session sway
 # fi

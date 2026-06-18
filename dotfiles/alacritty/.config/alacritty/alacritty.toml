@@ -1,7 +1,7 @@
 [general]
 live_config_reload = true
 import = [
-    "~/.config/alacritty/themes/nightfox.toml"
+    "~/.config/alacritty/themes/iterm.toml"
 ]
 
 [env]

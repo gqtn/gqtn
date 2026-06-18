@@ -33,6 +33,7 @@ exec swaync
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec brightnessctl set 8000
+exec waybar >> /dev/null
 exec insync start
 
 # Swayidle substitui o xset dpms para apagar a tela
