@@ -1,0 +1,79 @@
+/* Definições globais de tipografia e reset */
+* {
+    font-family: "Ubuntu Mono", "JetBrains Mono Nerd Font", monospace;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+/* Estrutura principal da barra baseada nas variáveis do Polybar */
+window#waybar {
+    background-color: rgba(43, 48, 59, 0.5); /* #2b303b80 (Fundo semi-transparente) */
+    border: 2px solid rgba(170, 170, 170, 0.66); /* #aaaaaaaa (Borda cinza) */
+    border-radius: 6px;
+    color: #D9D9D9; /* foreground */
+}
+
+/* Espaçamento interno padrão para afastar os elementos */
+#workspaces, #window, #clock, #custom-updates, #pulseaudio, #memory, #cpu, #custom-wlan0, #custom-eth0, #battery {
+    padding: 0 6px;
+}
+
+/* --- SWAY WORKSPACES --- */
+#workspaces button {
+    padding: 0 8px;
+    color: #707880; /* disabled */
+    background: transparent;
+    border-bottom: 3px solid transparent;
+}
+
+/* Workspace focada/ativa */
+#workspaces button.focused {
+    color: #FFFFFF; /* primary / active-underline */
+    background-color: rgba(170, 170, 170, 0.66); /* background-alt */
+    border-bottom: 3px solid #FFFFFF;
+}
+
+/* Workspace com alertas/urgente */
+#workspaces button.urgent {
+    background-color: #FFFFFF; /* alert */
+    color: #2b303b;
+}
+
+#workspaces button:hover {
+    background: rgba(170, 170, 170, 0.3);
+    box-shadow: none;
+    text-shadow: none;
+}
+
+/* --- TEXTO CENTRAL --- */
+#clock {
+    color: #FFFFFF; /* primary */
+}
+
+#custom-separator {
+    padding: 0 2px;
+}
+
+/* --- MENU DE ENERGIA --- */
+#custom-power-icon {
+    padding: 0 6px;
+}
+
+/* Botão Shut Down idêntico ao alert background do Polybar */
+#custom-shutdown {
+    background-color: #FFFFFF; /* alert background */
+    color: #2b303b; /* Texto escuro para contraste */
+    padding: 0 8px;
+    border-radius: 4px;
+    margin: 0 4px;
+}
+
+/* Botão Reboot */
+#custom-reboot {
+    color: #FFFFFF; /* secondary */
+    padding: 0 8px;
+    margin: 0 4px;
+}

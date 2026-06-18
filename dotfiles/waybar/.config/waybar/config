@@ -1,0 +1,146 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 26, // Altura aproximada para acomodar o tamanho de fonte 12pt do Polybar
+    "margin": "0 0 0 0",
+    "spacing": 3,
+
+    // Layout da Barra
+    "modules-left": [
+        "sway/workspaces",
+        "sway/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "custom/updates",
+        "custom/separator",
+        "pulseaudio",
+        "custom/separator",
+        "memory",
+        "custom/separator",
+        "cpu",
+        "custom/separator",
+        "custom/wlan0",
+        "custom/separator",
+        "custom/eth0",
+        "custom/separator",
+        "battery",
+        "custom/separator",
+        "group/powermenu"
+    ],
+
+    // MÓDULOS DA ESQUERDA (Sway Nativo)
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+    "sway/window": {
+        "max-length": 60,
+        "format": "{title}"
+    },
+
+    // MÓDULO CENTRAL
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M}",
+        "format-alt": "{:%d-%m-%Y %H:%M:%S}",
+        "tooltip": false
+    },
+
+    // SEPARADOR CUSTOMIZADO (Replica o separator = | do Polybar)
+    "custom/separator": {
+        "format": "<span color='#707880'>|</span>",
+        "tooltip": false
+    },
+
+    // MÓDULOS DA DIREITA
+    "custom/updates": {
+        "exec": "$HOME/.config/waybar/updates.sh",
+        "interval": 5,
+        "format": "<span color='#6CC188'>  </span>{}",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "scroll-step": 10,
+        "format": "<span color='#F0B67F'>  </span>{volume}%",
+        "format-muted": "<span color='#707880'>muted</span>",
+        // Altera o estado do Mute ao clicar com o botão esquerdo
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle", 
+        "on-click-right": "pavucontrol",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 2,
+        "format": "<span color='#C7EFCF'>  </span>{}%",
+        "tooltip": false
+    },
+    "cpu": {
+        "interval": 2,
+        "format": "<span color='#FE5F55'>  </span>{usage}%",
+        "tooltip": false
+    },
+    "custom/wlan0": {
+        "exec": "$HOME/.config/waybar/wifi.sh",
+        "interval": 5,
+        "format": "<span color='#B56F90'> </span> {}",
+        "on-click": "nm-connection-editor",
+        "tooltip": false
+    },
+    "custom/eth0": {
+        "exec": "$HOME/.config/waybar/eth.sh",
+        "interval": 5,
+        "format": "<span color='#009C8C'>󰈀 </span> {}",
+        "on-click": "nm-connection-editor",
+        "tooltip": false
+    },
+    "battery": {
+        "interval": 5,
+        "states": {
+            "good": 94,
+            "critical": 5
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-full": "<span color='#50FA7B'> </span> {capacity}%",
+        "format-critical": "<span color='#FF5555'>Warning!!  </span> {capacity}%",
+        "format-icons": [
+            "<span color='#FF5555'> </span>",
+            "<span color='#FF5555'> </span>",
+            "<span color='#cfdae1'> </span>",
+            "<span color='#cfdae1'> </span>",
+            "<span color='#cfdae1'> </span>"
+        ],
+        "tooltip": false
+    },
+
+    // MENU DE ENERGIA (Estilo Gaveta/Drawer)
+    "group/powermenu": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "transition-left-to-right": false // Expande para a esquerda
+        },
+        "modules": [
+            "custom/power-icon",
+            "custom/shutdown",
+            "custom/reboot"
+        ]
+    },
+    "custom/power-icon": {
+        "format": "<span color='#FFFFFF'>⏻ </span>",
+        "tooltip": false
+    },
+    "custom/shutdown": {
+        "format": "Shut Down",
+        "on-click": "systemctl poweroff",
+        "tooltip": false
+    },
+    "custom/reboot": {
+        "format": "Reboot",
+        "on-click": "systemctl reboot",
+        "tooltip": false
+    }
+}
