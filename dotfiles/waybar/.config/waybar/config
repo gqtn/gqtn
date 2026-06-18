@@ -1,7 +1,8 @@
 {
+    "output": "eDP-1",
     "layer": "top",
     "position": "top",
-    "height": 26, // Altura aproximada para acomodar o tamanho de fonte 12pt do Polybar
+    "height": 25, // Altura aproximada para acomodar o tamanho de fonte 12pt do Polybar
     "margin": "0 0 0 0",
     "spacing": 3,
 
@@ -60,7 +61,7 @@
     "custom/updates": {
         "exec": "$HOME/.config/waybar/updates.sh",
         "interval": 5,
-        "format": "<span color='#6CC188'>  </span>{}",
+        "format": "<span color='#6CC188'>󰣇  </span>{}",
         "tooltip": false
     },
     "pulseaudio": {
