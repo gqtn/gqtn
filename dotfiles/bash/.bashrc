@@ -78,3 +78,6 @@ export XDG_CURRENT_DESKTOP=sway
 # if [ -n "${XDG_VTNR:-}" ] && [ "${XDG_VTNR:-0}" -eq 1 ]; then
 #   exec dbus-run-session sway
 # fi
+
+
+cd /tmp/

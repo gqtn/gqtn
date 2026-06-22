@@ -13,6 +13,12 @@ alias la='ls -lha'
 alias cat="bat"
 alias pcat="bat -p"
 
+# networking
+alias wifion='nmcli radio wifi on'
+alias wifioff='nmcli radio wifi off'
+alias ip-r='ip -br -c r'
+alias ip-a='ip -br -c a'
+
 # exa instead lsd
 alias exa='exa \
     --tree \

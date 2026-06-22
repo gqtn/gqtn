@@ -145,11 +145,11 @@ bindsym $mod+r mode "resize"
 
 # +---+ Screenshots (Atualizado para Wayland) +---+
 # Tela cheia para arquivo
-bindsym Print exec grim "/home/$USER/pictures/$(date '+%H:%M-%d.%m.%y').png"
+bindsym Print exec grim "/tmp/$(date '+%H:%M-%d.%m.%y').png"
 # Janela ativa para arquivo (Usando o tree do swaymsg)
-bindsym $mod+Print exec swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | grim -g - "/home/$USER/pictures/$(date '+%H:%M-%d.%m.%y').png"
+bindsym $mod+Print exec swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | grim -g - "/tmp/$(date '+%H:%M-%d.%m.%y').png"
 # Seleção manual para arquivo
-bindsym Shift+Print exec slurp | grim -g - "/home/$USER/pictures/$(date '+%H:%M-%d.%m.%y').png"
+bindsym Shift+Print exec slurp | grim -g - "/tmp/$(date '+%H:%M-%d.%m.%y').png"
 
 # +---+ Screenshots (Atualizado para Clipboard) +---+
 
