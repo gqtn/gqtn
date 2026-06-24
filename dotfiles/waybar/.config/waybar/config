@@ -9,7 +9,7 @@
     // Layout da Barra
     "modules-left": [
         "sway/workspaces",
-        "sway/window"
+        "custom/sound"
     ],
     "modules-center": [
         "clock"
@@ -41,6 +41,11 @@
     "sway/window": {
         "max-length": 60,
         "format": "{title}"
+    },
+    "custom/sound": {
+        "exec": "$HOME/.config/waybar/cava.sh",
+        "format": "{}",
+        "tooltip": false
     },
 
     // MÓDULO CENTRAL
@@ -104,9 +109,9 @@
             "critical": 5
         },
         "format": "{icon} {capacity}%",
-        "format-charging": "  ",
-        "format-full": "<span color='#51FA7B'> </span>",
-        "format-critical": "<span color='#FF5555'>Warning!!  </span> {capacity}%",
+        "charging": "{icon} {capacity}%",
+        "full": "<span color='#51FA7B'> </span>",
+        "critical": "<span color='#FF5555'>Warning!!  </span> {capacity}%",
         "format-icons": [
             "<span color='#FF5555'> </span>",
             "<span color='#FF5555'> </span>",

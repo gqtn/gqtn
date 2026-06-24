@@ -67,17 +67,15 @@ export SUDO_EDITOR
 export XDG_CURRENT_DESKTOP=sway
 
 
-# TMUX STARTUP
 # Start tmux if available
-#if command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ] && [ -n "$PS1" ] && [[ "$TERM" != "linux" ]]; then
-#  tmux new-session
-#fi
+if command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ] && [ -n "$PS1" ] && [[ "$TERM" != "linux" ]]; then
+  tmux new-session
+fi
 
-# I3 STARTUP
-# Start i3 (commented out by default)
-# if [ -n "${XDG_VTNR:-}" ] && [ "${XDG_VTNR:-0}" -eq 1 ]; then
-#   exec dbus-run-session sway
-# fi
+### Sway Startup, when you can it
+#if [ -n "${XDG_VTNR:-}" ] && [ "${XDG_VTNR:-0}" -eq 1 ]; then
+#  exec dbus-run-session sway
+#fi
 
 
 cd /tmp/
