@@ -9,9 +9,16 @@ alias ls='lsd'
 alias ll='ls -lh'
 alias la='ls -lha'
 
+# Wayland things
+alias gparted='sudo -E gparted'
+alias anydesk='GDK_BACKEND=x11 anydesk'
+
 # bat instead cat
 alias cat="bat"
 alias pcat="bat -p"
+
+# yay helper
+alias yay='yay -a'
 
 # networking
 alias wifion='nmcli radio wifi on'

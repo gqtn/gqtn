@@ -250,16 +250,15 @@ echo && echo '{
 
 # Simple script to select a wallpaper:
 selectwallpaper(){
-
-	cd $HOME/drive/wallpapers/ || exit 1
+	cd /usr/share/backgrounds/archlinux/ || exit 1
 	
-	echo -e "\nSelecting file in "$HOME/drive/wallpapers/"\n"
+	echo -e "\nSelecting file\n"
 
 	PS3="Choose the wallpaper by number: "
 
 	select file in *; do
-      rm default.png
-      ln -s $HOME/drive/wallpapers/$file $HOME/drive/wallpapers/default.png
+      sudo rm default.png
+      sudo ln -s /usr/share/backgrounds/archlinux/$file /usr/share/backgrounds/archlinux/default.png
 		break
 	done
 }

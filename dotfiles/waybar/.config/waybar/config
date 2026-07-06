@@ -9,14 +9,15 @@
     // Layout da Barra
     "modules-left": [
         "sway/workspaces",
-        "custom/sound"
+        "custom/separator",
+        "custom/sound",
+        "custom/separator",
+        "custom/updates"
     ],
     "modules-center": [
         "clock"
     ],
     "modules-right": [
-        "custom/updates",
-        "custom/separator",
         "pulseaudio",
         "custom/separator",
         "memory",
@@ -108,18 +109,12 @@
             "good": 94,
             "critical": 5
         },
-        "format": "{icon} {capacity}%",
-        "charging": "{icon} {capacity}%",
-        "full": "<span color='#51FA7B'> </span>",
-        "critical": "<span color='#FF5555'>Warning!!  </span> {capacity}%",
-        "format-icons": [
-            "<span color='#FF5555'> </span>",
-            "<span color='#FF5555'> </span>",
-            "<span color='#cfdae1'> </span>",
-            "<span color='#cfdae1'> </span>",
-            "<span color='#cfdae1'> </span>"
-        ],
-        "tooltip": false
+        "format": "{icon}",
+        "format-icons": {
+            "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+            "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+            },
+            "tooltip": false
     },
 
     // MENU DE ENERGIA (Estilo Gaveta/Drawer)
