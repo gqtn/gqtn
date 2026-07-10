@@ -24,8 +24,7 @@ workspace 1 output eDP-1
 
 # +---+ Papel de Parede (Substitui o feh e wallpapers.sh) +---+
 include ~/.config/sway/outputs
-#output * bg /home/gabriel/drive/wallpapers/default.png fill
-output * bg /usr/share/backgrounds/archlinux/default.png fill
+output * bg /home/gabriel/drive/wallpapers/default.png fill
 
 # +---+ Startup +---+
 # O Sway não precisa do picom nem de scripts de screenlayout externos
@@ -35,7 +34,7 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec brightnessctl set 8000
 exec waybar >> /dev/null
-#exec insync start
+exec insync start
 
 # Swayidle substitui o xset dpms para apagar a tela
 
