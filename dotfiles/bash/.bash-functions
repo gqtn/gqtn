@@ -245,7 +245,7 @@ echo && echo '{
   "modules": [
     "title", "separator", "os", "host", "kernel", "uptime", "separator", "cpu", "gpu", "separator", "packages"
   ]
-}' | fastfetch -c - -l none --color-title blue --color-keys red
+}' | fastfetch -c - -l none --color-title blue --color-keys red -l small
 }
 
 # Simple script to select a wallpaper:
@@ -263,3 +263,35 @@ selectwallpaper(){
 	done
 }
 
+# nmcli select
+set-bridge-manual() {
+    read -p 'IPv4 with Mask (ex: 192.168.1.10/24)? ' ip
+    
+    # Valida se o usuário digitou algo
+    if [ -z "$ip" ]; then
+        echo "Erro: Nenhum IP fornecido. Operação cancelada."
+        return 1
+    fi
+
+    # Aplica IP manual e limpa possíveis gateways/DNS herdados do DHCP
+    sudo nmcli connection modify br0 \
+        ipv4.method manual \
+        ipv4.addresses "$ip" \
+        ipv4.gateway "" \
+        ipv4.dns ""
+
+    # Recarrega a conexão para aplicar as mudanças
+    sudo nmcli connection up br0
+}
+
+set-bridge-dhcp() {
+    # Retorna para DHCP e limpa o IP manual fixado anteriormente
+    sudo nmcli connection modify br0 \
+        ipv4.method auto \
+        ipv4.addresses "" \
+        ipv4.gateway "" \
+        ipv4.dns ""
+
+    # Recarrega a conexão para solicitar o novo IP
+    sudo nmcli connection up br0
+}
