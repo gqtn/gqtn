@@ -24,6 +24,8 @@
         "custom/separator",
         "cpu",
         "custom/separator",
+        "custom/vpn",
+        "custom/separator",
         "custom/wlan0",
         "custom/separator",
         "custom/eth0",
@@ -70,6 +72,7 @@
         "format": "<span color='#6CC188'>󰣇  </span>{}",
         "tooltip": false
     },
+
     "pulseaudio": {
         "scroll-step": 10,
         "format": "<span color='#F0B67F'>  </span>{volume}%",
@@ -89,6 +92,14 @@
         "format": "<span color='#FE5F55'>  </span>{usage}%",
         "tooltip": false
     },
+
+    "custom/vpn": {
+        "exec": "~/.config/waybar/vpn.sh",
+        "interval": 5, // Atualiza a cada 5 segundos
+        "format": "<span color='#F0B67F'> 󰢋 </span> {}",
+        "tooltip": false
+    },
+
     "custom/wlan0": {
         "exec": "$HOME/.config/waybar/wifi.sh",
         "interval": 5,

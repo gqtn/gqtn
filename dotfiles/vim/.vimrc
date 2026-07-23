@@ -14,7 +14,7 @@ call vundle#begin()
  
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Maxim4711/glow.vim'
+Plugin 'SilentGlasses/colorhighlighter'
 Plugin 'vim-airline/vim-airline' 
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'iamcco/markdown-preview.nvim'
@@ -78,5 +78,11 @@ hi LineNrBelow guifg=green ctermfg=green
 
 nnoremap <Esc> :noh<CR>
 
-let g:glow_render_colors = 1
+" Cria o comando :Glow para abrir o markdown renderizado nativamente
+command! Glow vert term ++close glow -s dark -p %
+
 set splitright
+
+if has('termguicolors')
+  set termguicolors
+endif

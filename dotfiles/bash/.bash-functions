@@ -257,41 +257,20 @@ selectwallpaper(){
 	PS3="Choose the wallpaper by number: "
 
 	select file in *; do
-      rm default.png
-      ln -s /home/gabriel/drive/wallpapers/$file /home/gabriel/drive/wallpapers/default.png
+      rm /home/gabriel/.config/sway/default.png
+      ln -s /home/gabriel/drive/wallpapers/$file /home/gabriel/.config/sway/default.png
 		break
 	done
 }
 
-# nmcli select
-set-bridge-manual() {
-    read -p 'IPv4 with Mask (ex: 192.168.1.10/24)? ' ip
+
+backup-kernel() {
+    echo "Fazendo backup do kernel atual..."
+    sudo cp /boot/vmlinuz-linux /boot/vmlinuz-linux-seguro
+    sudo cp /boot/initramfs-linux.img /boot/initramfs-linux-seguro.img
     
-    # Valida se o usuário digitou algo
-    if [ -z "$ip" ]; then
-        echo "Erro: Nenhum IP fornecido. Operação cancelada."
-        return 1
-    fi
-
-    # Aplica IP manual e limpa possíveis gateways/DNS herdados do DHCP
-    sudo nmcli connection modify br0 \
-        ipv4.method manual \
-        ipv4.addresses "$ip" \
-        ipv4.gateway "" \
-        ipv4.dns ""
-
-    # Recarrega a conexão para aplicar as mudanças
-    sudo nmcli connection up br0
-}
-
-set-bridge-dhcp() {
-    # Retorna para DHCP e limpa o IP manual fixado anteriormente
-    sudo nmcli connection modify br0 \
-        ipv4.method auto \
-        ipv4.addresses "" \
-        ipv4.gateway "" \
-        ipv4.dns ""
-
-    # Recarrega a conexão para solicitar o novo IP
-    sudo nmcli connection up br0
+    echo "Atualizando o menu do GRUB..."
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
+    
+    echo "Pronto! Kernel seguro garantido no GRUB."
 }

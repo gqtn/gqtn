@@ -19,12 +19,13 @@ input type:touchpad {
 }
 # +---+ Monitores e Workspaces (Substitui o auto-scripts.sh) +---+
 # Use 'swaymsg -t get_outputs' para confirmar os nomes exatos das saídas
+workspace 1 output HDMI-A-2
 workspace 7 output HDMI-A-1
 workspace 1 output eDP-1
 
 # +---+ Papel de Parede (Substitui o feh e wallpapers.sh) +---+
 include ~/.config/sway/outputs
-output * bg /home/gabriel/drive/wallpapers/default.png fill
+output * bg /home/gabriel/.config/sway/default.png fill
 
 # +---+ Startup +---+
 # O Sway não precisa do picom nem de scripts de screenlayout externos
@@ -32,8 +33,8 @@ output * bg /home/gabriel/drive/wallpapers/default.png fill
 exec swaync
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /home/gabriel/.config/sway/start-waybar.sh
 exec brightnessctl set 8000
-exec waybar >> /dev/null
 exec insync start
 
 # Swayidle substitui o xset dpms para apagar a tela
@@ -202,3 +203,14 @@ shadow_blur_radius 15
 #blur_xray off
 #blur_passes 3
 #blur_radius 5
+
+# Ativar blur nas janelas transparentes
+blur on
+
+blur_xray off
+
+# Qualidade do blur (recomendo 2 ou 3 para um bom equilíbrio entre visual e performance)
+blur_passes 1
+
+# QUANTIDADE DE BLUR: Aumente este número para deixar mais embaçado (ex: 5 a 15)
+blur_radius 7
