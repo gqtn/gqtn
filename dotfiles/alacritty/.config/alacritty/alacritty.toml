@@ -11,7 +11,7 @@ TERM = "xterm-256color"
 dynamic_padding = true
 padding.x = 15
 padding.y = 15
-opacity = 0.60
+opacity = 0.85
 blur = true
 decorations = "Full"
 
