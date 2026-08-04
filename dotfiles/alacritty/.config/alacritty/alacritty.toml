@@ -19,9 +19,9 @@ decorations = "Full"
 save_to_clipboard = true
 
 [font]
-size = 11
-#normal={ family = "Hack Nerd Font Mono" }
-normal={ family = "JetBrainsMono NFM", style = "Medium" }
+size = 13
+normal={ family = "Hack Nerd Font Mono" }
+#normal={ family = "JetBrainsMono NFM", style = "Medium" }
 offset={ x = 0, y = 2 }
 
 [keyboard]
