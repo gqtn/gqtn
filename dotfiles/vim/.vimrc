@@ -82,7 +82,3 @@ nnoremap <Esc> :noh<CR>
 command! Glow vert term ++close glow -s dark -p %
 
 set splitright
-
-if has('termguicolors')
-  set termguicolors
-endif

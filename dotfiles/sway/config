@@ -199,18 +199,18 @@ shadows on
 shadow_blur_radius 15
 
 # Ativar blur nas janelas (ex: deixa o terminal semi-transparente e borrado)
-#blur on
-#blur_xray off
-#blur_passes 3
-#blur_radius 5
+blur on
+blur_xray off
+blur_passes 2
+blur_radius 1
 
 # Ativar blur nas janelas transparentes
-blur on
+#blur on
 
-blur_xray off
+#blur_xray off
 
 # Qualidade do blur (recomendo 2 ou 3 para um bom equilíbrio entre visual e performance)
-blur_passes 1
+#blur_passes 1
 
 # QUANTIDADE DE BLUR: Aumente este número para deixar mais embaçado (ex: 5 a 15)
-blur_radius 7
+#blur_radius 7
