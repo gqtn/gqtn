@@ -2,7 +2,7 @@
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 " Set some required specs:
-set encoding=UTF-8
+set encoding=utf-8
 set nocompatible              " required
 filetype off                  " required
  
@@ -23,7 +23,6 @@ Plugin 'chr4/nginx.vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
-Plugin 'jiangmiao/auto-pairs'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'aymericbeaumet/symlink.vim'
 
@@ -82,3 +81,8 @@ nnoremap <Esc> :noh<CR>
 command! Glow vert term ++close glow -s dark -p %
 
 set splitright
+
+" About emojis :)
+set completefunc=emoji#complete
+autocmd InsertLeave * silent! %s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/ge
+inoremap <C-e> <C-x><C-u>

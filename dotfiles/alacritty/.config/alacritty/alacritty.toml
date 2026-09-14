@@ -11,7 +11,7 @@ TERM = "xterm-256color"
 dynamic_padding = true
 padding.x = 15
 padding.y = 15
-opacity = 0.60
+opacity = 0.9
 blur = true
 decorations = "Full"
 
@@ -19,9 +19,11 @@ decorations = "Full"
 save_to_clipboard = true
 
 [font]
-size = 13
-normal={ family = "Hack Nerd Font Mono" }
-#normal={ family = "JetBrainsMono NFM", style = "Medium" }
+size = 15
+#normal={ family = "ComicShannsMono Nerd Font Mono" }
+#normal={ family = "Hack Nerd Font Mono" }
+normal={ family = "JetBrainsMono NFM", style = "Medium" }
+
 offset={ x = 0, y = 2 }
 
 [keyboard]
