@@ -1,7 +1,6 @@
 # My Book
 
 ---
-
 ### Steps
 
 - [Arch Linux](#ArchWay)
