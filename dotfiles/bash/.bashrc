@@ -67,9 +67,9 @@ export SUDO_EDITOR
 export XDG_CURRENT_DESKTOP=sway
 
 # Start tmux if available
- if command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ] && [ -n "$PS1" ] && [[ "$TERM" != "linux" ]]; then
-   tmux new-session
- fi
+# if command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ] && [ -n "$PS1" ] && [[ "$TERM" != "linux" ]]; then
+#   tmux new-session
+#fi
 
 ### Sway Startup, when you can it
 #if [ -n "${XDG_VTNR:-}" ] && [ "${XDG_VTNR:-0}" -eq 1 ]; then
@@ -83,6 +83,4 @@ export PATH="${HOME}/.local/bin:${PATH}"
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 
-# treemd shell completion
-source <(COMPLETE=bash treemd)
-
+export PATH="$HOME/.local/bin:$PATH"

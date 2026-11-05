@@ -24,8 +24,8 @@ workspace 7 output HDMI-A-1
 workspace 1 output eDP-1
 
 # +---+ Papel de Parede (Substitui o feh e wallpapers.sh) +---+
-include ~/.config/sway/outputs
-output * bg /home/gabriel/.config/sway/default.png fill
+#include ~/.config/sway/outputs
+#output * bg /home/gabriel/.config/sway/default.png fill
 
 # +---+ Startup +---+
 # O Sway não precisa do picom nem de scripts de screenlayout externos
@@ -33,9 +33,12 @@ output * bg /home/gabriel/.config/sway/default.png fill
 exec swaync
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec /home/gabriel/.config/sway/start-waybar.sh
+exec gnome-keyring-daemon --start --components=secrets
 exec brightnessctl set 8000
+exec noctalia
 exec insync start
+exec nm-applet --indicator
+#exec /home/gabriel/.config/sway/start-waybar.sh
 
 # Swayidle substitui o xset dpms para apagar a tela
 
@@ -53,11 +56,15 @@ title_align center
 # +---+ Keys Control +---+
 bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
-bindsym $mod+d exec rofi -c ~/.config/rofi/config.rasi -modi drun -show drun
+#bindsym $mod+d exec rofi -c ~/.config/rofi/config.rasi -modi drun -show drun
+bindsym $mod+d exec $ipc panel-toggle launcher
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym Ctrl+$mod+l exec hyprlock
-bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit Sway?' -B 'Yes, exit sway' 'swaymsg exit'
+#bindsym Ctrl+$mod+l exec hyprlock
+bindsym Ctrl+$mod+l exec noctalia msg session lock
+#bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit Sway?' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+q exec noctalia msg panel-toggle session
+
 
 # +---+ Best +---+
 bindsym $mod+e layout stacking
@@ -214,3 +221,24 @@ blur_radius 1
 
 # QUANTIDADE DE BLUR: Aumente este número para deixar mais embaçado (ex: 5 a 15)
 #blur_radius 7
+
+# Core binds
+#bindsym $mod+space exec $ipc panel-toggle launcher
+#bindsym $mod+c exec $ipc panel-toggle control-center
+#bindsym $mod+comma exec $ipc settings-toggle
+
+# Media keys
+#bindsym --locked XF86AudioRaiseVolume exec $ipc volume-up
+#bindsym --locked XF86AudioLowerVolume exec $ipc volume-down
+#bindsym --locked XF86AudioMute exec $ipc volume-mute
+#bindsym --locked XF86MonBrightnessUp exec $ipc brightness-up
+#bindsym --locked XF86MonBrightnessDown exec $ipc brightness-down
+
+set $ipc noctalia msg
+bindsym --locked XF86AudioRaiseVolume exec $ipc volume-up
+bindsym --locked XF86AudioLowerVolume exec $ipc volume-down
+bindsym --locked XF86AudioMute exec $ipc volume-mute
+bindsym --locked XF86MonBrightnessUp exec $ipc brightness-up
+bindsym --locked XF86MonBrightnessDown exec $ipc brightness-down
+
+include ~/.config/sway/noctalia
