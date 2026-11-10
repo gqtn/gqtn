@@ -1,0 +1,222 @@
+config_version = 16
+
+[bar.default]
+capsule = true
+center = [ "notifications", "clock", "clipboard" ]
+end = [ "usage", "tray", "network", "group:g1", "volume", "battery", "control-center", "session" ]
+font_family = "UbuntuSans Nerd Font"
+margin_edge = 4
+margin_ends = 5
+position = "bottom"
+reserve_space = false
+show_on_workspace_switch = false
+smart_auto_hide = true
+start = [ "wallpaper", "workspaces", "media", "widget_2" ]
+
+    [bar.default.monitor.HDMI-A-1]
+    enabled = false
+    end = [ "tray", "network", "group:g1", "volume", "battery", "control-center", "session" ]
+    start = [ "wallpaper", "workspaces", "media", "widget" ]
+
+    [bar.default.monitor.eDP-1]
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
+    enabled = true
+    fill = "surface_container"
+    id = "g1"
+    members = [ "cpu", "ram" ]
+    opacity = 1.0
+    padding = 6.0
+
+[battery]
+warning_threshold = 20
+
+[bluetooth]
+connect_when_enabled = true
+connection_notifications = true
+
+[calendar]
+enabled = true
+
+    [calendar.account.personal_google]
+    name = "Google"
+    type = "google"
+
+[desktop_widgets]
+enabled = false
+
+[location]
+auto_locate = true
+
+[lockscreen]
+blur_intensity = 0.34999999217689037
+blurred_desktop = true
+transition = [ "stripes" ]
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-login-box@HDMI-A-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    enabled = false
+    output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 800.0
+    cy = 817.0
+    output = "eDP-1"
+    placement_height = 999.0
+    placement_width = 1599.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_container"
+        background_opacity = 0.0
+        background_radius = 0.0
+        center_password_text = false
+        input_opacity = 0.050000000000000003
+        input_radius = 0.0
+        layout = "compact"
+        show_caps_lock = false
+        show_keyboard_layout = false
+        show_login_button = false
+        show_media = true
+        show_password_reveal = false
+        show_session_buttons = true
+        show_unlock_hint = false
+        show_weather = true
+
+[notification]
+history_retention_hours = 1
+keep_dismissed_in_history = false
+monitors = [ "eDP-1" ]
+position = "bottom_center"
+
+[plugin_settings."ayagmar/headroom"]
+provider_claude = "off"
+provider_codex = "off"
+
+[plugin_settings."yuuto/arch-updater"]
+aur_helper = "off"
+auto_check_hours = 1
+config_review = false
+flatpak_enabled = false
+log_lines = 10
+panel_placement = "floating"
+
+[plugins]
+enabled = [ "mahmoudomiesh/network-monitor", "yuuto/arch-updater", "ayagmar/headroom" ]
+
+[shell]
+avatar_path = "/home/gabriel/drive/wallpapers/st-benedict-medal.png"
+external_ip_enabled = true
+font_family = "UbuntuSans Nerd Font"
+
+    [shell.animation]
+    enabled = false
+
+    [shell.launcher]
+    default_view = "all"
+
+    [shell.panel]
+    control_center_placement = "floating"
+    open_near_click_control_center = true
+    open_near_click_wallpaper = true
+    wallpaper_placement = "floating"
+
+    [shell.screen_corners]
+    enabled = true
+
+    [shell.screenshot]
+    remember_last_region = true
+
+[theme]
+source = "wallpaper"
+
+    [theme.templates]
+    builtin_ids = [ "alacritty", "btop", "cava", "gtk3", "gtk4", "kcolorscheme", "qt", "sway" ]
+
+[wallpaper]
+directory = "/home/gabriel/drive/wallpapers"
+transition = []
+
+    [wallpaper.automation]
+    order = "alphabetical"
+
+    [wallpaper.default]
+    path = "/home/gabriel/drive/wallpapers/f1-ferrari.jpg"
+
+    [wallpaper.last]
+    path = "/home/gabriel/drive/wallpapers/f1-ferrari.jpg"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/gabriel/drive/wallpapers/f1-ferrari.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/gabriel/drive/wallpapers/f1-ferrari.jpg"
+
+[widget.control-center]
+glyph = "home"
+
+[widget.cpu]
+visualization = "none"
+
+[widget.network]
+vpn_status = "both"
+
+[widget.ram]
+stat = "ram_pct"
+visualization = "none"
+
+[widget.tray]
+detached_panel = true
+drawer = true
+
+[widget.usage]
+type = "ayagmar/headroom:usage"
+
+[widget.widget]
+type = "yuuto/arch-updater:widget"
+
+[widget.widget_2]
+type = "yuuto/arch-updater:widget"
+
+[widget.workspaces]
+show_all_outputs = true
